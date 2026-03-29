@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+docker/ha-config/.storage/
+docker/ha-config/home-assistant_v2.db*
+docker/ha-config/tts/

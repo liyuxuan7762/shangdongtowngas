@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "港华燃气 — 获取授权链接",
+        "description": "请用手机微信扫码授权：\n\n{oauth_qr_markdown}\n\n授权链接：{oauth_url}",
+        "data": {}
+      },
+      "auth": {
+        "title": "港华燃气 — 输入授权信息",
+        "description": "扫码授权后，请将跳转地址中的 authCode 粘贴到下方。\n\n{oauth_qr_markdown}\n\n授权链接：{oauth_url}",
+        "data": {
+          "auth_code": "authCode（或完整跳转 URL）",
+          "subs_id": "户号 ID（subsId）",
+          "subs_code": "户号（subsCode）",
+          "scan_interval": "数据刷新间隔（秒，60-86400，默认 3600）",
+          "token_refresh_interval": "Token 刷新间隔（秒，300-7140，默认 3600）"
+        }
+      },
+      "reauth_confirm": {
+        "title": "港华燃气 — 重新授权",
+        "description": "令牌已失效，请重新用微信扫码授权：\n\n{oauth_qr_markdown}\n\n授权链接：{oauth_url}",
+        "data": {}
+      },
+      "reauth_token": {
+        "title": "港华燃气 — 输入新的 authCode",
+        "description": "扫码后请粘贴新的 authCode。\n\n{oauth_qr_markdown}\n\n授权链接：{oauth_url}",
+        "data": {
+          "auth_code": "authCode（或完整跳转 URL）"
+        }
+      }
+    },
+    "abort": {
+      "oauth_url_failed": "获取微信授权链接失败，请稍后重试。"
+    },
+    "error": {
+      "exchange_failed": "兑换 Token 失败，请检查 authCode 是否正确。",
+      "auth_failed": "授权失败，未获取到有效 Token。",
+      "subs_required": "户号 ID 和户号不能为空。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "港华燃气 — 设置",
+        "data": {
+          "scan_interval": "数据刷新间隔（秒，60-86400，默认 3600）",
+          "token_refresh_interval": "Token 刷新间隔（秒，300-7140，默认 3600）"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "gas_meter_reading": {
+        "name": "燃气表读数"
+      }
+    },
+    "button": {
+      "refresh_data": {
+        "name": "立即刷新"
+      }
+    }
+  }
+}

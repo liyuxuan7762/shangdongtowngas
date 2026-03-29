@@ -1,0 +1,12 @@
+{
+  "domain": "hztowngas",
+  "name": "港华燃气 (HZTownGas)",
+  "codeowners": ["@palafin02back"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/palafin02back/hztowngas",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/palafin02back/hztowngas/issues",
+  "requirements": ["aiohttp>=3.8.0", "qrcode[pil]>=7.4.2"],
+  "version": "1.0.0"
+}
