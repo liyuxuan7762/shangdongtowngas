@@ -13,8 +13,8 @@
           "auth_code": "authCode (or full redirect URL)",
           "subs_id": "Subscription ID (subsId)",
           "subs_code": "Account Number (subsCode)",
-          "scan_interval": "Data refresh interval (seconds, 60-86400, default 3600)",
-          "token_refresh_interval": "Token refresh interval (seconds, 300-7140, default 3600)"
+          "scan_interval": "Data refresh interval (seconds, 60-86400, default 21600)",
+          "token_refresh_interval": "Token refresh interval (seconds, 300-7140, default 1800)"
         }
       },
       "reauth_confirm": {
@@ -44,8 +44,8 @@
       "init": {
         "title": "TownGas Meter — Settings",
         "data": {
-          "scan_interval": "Data refresh interval (seconds, 60-86400, default 3600)",
-          "token_refresh_interval": "Token refresh interval (seconds, 300-7140, default 3600)"
+          "scan_interval": "Data refresh interval (seconds, 60-86400, default 21600)",
+          "token_refresh_interval": "Token refresh interval (seconds, 300-7140, default 1800)"
         }
       }
     }

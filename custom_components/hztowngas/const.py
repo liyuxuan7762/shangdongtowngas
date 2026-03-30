@@ -12,8 +12,8 @@ CONF_TOKEN_REFRESH_INTERVAL = "token_refresh_interval"
 CONF_TOKEN_EXPIRES_IN = "token_expires_in"
 CONF_TOKEN_CREATE_TIME = "token_create_time"
 
-DEFAULT_SCAN_INTERVAL = 3600          # seconds — data fetch every 1 hour
-DEFAULT_TOKEN_REFRESH_INTERVAL = 3600  # seconds — token refresh every 1 hour (AT TTL/2)
+DEFAULT_SCAN_INTERVAL = 21600          # seconds — data fetch every 6 hours
+DEFAULT_TOKEN_REFRESH_INTERVAL = 1800  # seconds — token refresh every 30 min (keepalive)
 DEFAULT_HOST = "weixin.towngasvcc.com"
 DEFAULT_CLIENT_ID = "pe92a8wechatYH0105"
 

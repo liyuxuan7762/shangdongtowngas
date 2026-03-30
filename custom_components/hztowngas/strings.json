@@ -13,8 +13,8 @@
           "auth_code": "authCode（或完整跳转 URL）",
           "subs_id": "户号 ID（subsId）",
           "subs_code": "户号（subsCode）",
-          "scan_interval": "数据刷新间隔（秒，60-86400，默认 3600）",
-          "token_refresh_interval": "Token 刷新间隔（秒，300-7140，默认 3600）"
+          "scan_interval": "数据刷新间隔（秒，60-86400，默认 21600）",
+          "token_refresh_interval": "Token 刷新间隔（秒，300-7140，默认 1800）"
         }
       },
       "reauth_confirm": {
@@ -44,8 +44,8 @@
       "init": {
         "title": "港华燃气 — 设置",
         "data": {
-          "scan_interval": "数据刷新间隔（秒，60-86400，默认 3600）",
-          "token_refresh_interval": "Token 刷新间隔（秒，300-7140，默认 3600）"
+          "scan_interval": "数据刷新间隔（秒，60-86400，默认 21600）",
+          "token_refresh_interval": "Token 刷新间隔（秒，300-7140，默认 1800）"
         }
       }
     }
