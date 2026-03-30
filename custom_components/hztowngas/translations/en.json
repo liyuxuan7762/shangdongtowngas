@@ -31,7 +31,8 @@
       }
     },
     "abort": {
-      "oauth_url_failed": "Failed to get WeChat OAuth URL. Please try again later."
+      "oauth_url_failed": "Failed to get WeChat OAuth URL. Please try again later.",
+      "already_configured": "This account is already configured. Remove the existing entry first if you want to re-add it."
     },
     "error": {
       "exchange_failed": "Token exchange failed. Please check the authCode.",

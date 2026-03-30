@@ -31,7 +31,8 @@
       }
     },
     "abort": {
-      "oauth_url_failed": "获取微信授权链接失败，请稍后重试。"
+      "oauth_url_failed": "获取微信授权链接失败，请稍后重试。",
+      "already_configured": "该户号已添加，如需更换账号请先删除现有集成条目。"
     },
     "error": {
       "exchange_failed": "兑换 Token 失败，请检查 authCode 是否正确。",

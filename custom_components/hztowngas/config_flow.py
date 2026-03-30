@@ -112,6 +112,8 @@ class TownGasConfigFlow(ConfigFlow, domain=DOMAIN):
                 if not subs_id or not subs_code:
                     errors["base"] = "subs_required"
                 else:
+                    await self.async_set_unique_id(subs_id)
+                    self._abort_if_unique_id_configured()
                     scan_interval = int(
                         user_input.get(CONF_SCAN_INTERVAL, DEFAULT_SCAN_INTERVAL)
                     )
