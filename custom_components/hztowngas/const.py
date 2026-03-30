@@ -16,6 +16,8 @@ DEFAULT_SCAN_INTERVAL = 21600          # seconds — data fetch every 6 hours
 DEFAULT_TOKEN_REFRESH_INTERVAL = 1800  # seconds — token refresh every 30 min (keepalive)
 DEFAULT_HOST = "weixin.towngasvcc.com"
 DEFAULT_CLIENT_ID = "pe92a8wechatYH0105"
+
+***REMOVED***
 SIGN_SALT = "hbasesoft.com-prod"
 OAUTH_PATH = "/vcc-oauth"
 API_PATH = "/nv1/vcc-cbs"

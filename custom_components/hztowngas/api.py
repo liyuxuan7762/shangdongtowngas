@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import hashlib
-import json
 import logging
 import ssl
 import time
@@ -182,7 +181,7 @@ class TownGasApi:
         async with self._session.get(url, headers=headers, ssl=_SSL_CTX) as resp:
             body = await resp.text()
             try:
-                data = json.loads(body) if body else {}
+                data = __import__("json").loads(body) if body else {}
             except Exception:
                 data = {}
             _LOGGER.debug(
@@ -222,6 +221,11 @@ class TownGasApi:
             subs_id, curr, err_code, err_msg,
         )
         return result
+
+    async def get_login_user_info(self) -> dict[str, Any]:
+        """GET /usersubs/getLoginUserInfo."""
+        return await self._cbs_get("/usersubs/getLoginUserInfo")
+
 
 class AuthError(Exception):
     """Raised when authentication is not possible."""
