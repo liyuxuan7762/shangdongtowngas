@@ -78,17 +78,19 @@ class TownGasMeterSensor(CoordinatorEntity, SensorEntity):
         }
 
     def _get_curr_reading(self) -> str | None:
-        """从 datas.readingRptList[0].currReading 读取."""
+        """从 readingRptList[0].currReading 读取，月初 fallback 到 gasFee.currReading."""
         datas = (self.coordinator.data or {}).get("datas")
         if not isinstance(datas, dict):
             return None
         lst = datas.get("readingRptList")
-        if not lst or not isinstance(lst, list):
-            return None
-        first = lst[0] if lst else None
-        if not isinstance(first, dict):
-            return None
-        return first.get("currReading")
+        if lst and isinstance(lst, list):
+            first = lst[0]
+            if isinstance(first, dict) and first.get("currReading") is not None:
+                return first.get("currReading")
+        gas_fee = datas.get("gasFee")
+        if isinstance(gas_fee, dict):
+            return gas_fee.get("currReading")
+        return None
 
     @property
     def native_value(self) -> float | None:
@@ -120,6 +122,19 @@ class TownGasMeterSensor(CoordinatorEntity, SensorEntity):
                 for k in ("recordDate", "resId", "amount"):
                     if rpt.get(k) is not None:
                         attrs[k] = rpt[k]
+        gas_fee = datas.get("gasFee")
+        if isinstance(gas_fee, dict):
+            for k in ("lastReading", "totalAmount", "totalFee", "recordDate",
+                      "orgShortName", "orgCode"):
+                if gas_fee.get(k) is not None:
+                    attrs.setdefault(k, gas_fee[k])
+            fee_list = gas_fee.get("gasFeeList")
+            if fee_list and isinstance(fee_list, list) and isinstance(fee_list[0], dict):
+                bill = fee_list[0]
+                for k in ("yrMonth", "amount", "price", "chrgSum", "unpaidFee",
+                          "paidSum", "lateFeeDate", "lastReading", "currReading"):
+                    if bill.get(k) is not None:
+                        attrs.setdefault(f"bill_{k}", bill[k])
 
         now = dt_util.utcnow()
         for key in ("next_data_refresh", "next_token_refresh"):

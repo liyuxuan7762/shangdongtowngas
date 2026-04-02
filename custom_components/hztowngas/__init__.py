@@ -116,9 +116,14 @@ async def async_setup_entry(hass: HomeAssistant, entry: TownGasConfigEntry) -> b
             # of the maintenance window without an explicit errorCode.
             if isinstance(datas, dict):
                 lst = datas.get("readingRptList")
-                if not lst:
-                    _LOGGER.warning("API 返回数据无 readingRptList（可能处于维护期），保留上次读数")
-                    raise UpdateFailed("API 数据不完整：无 readingRptList")
+                gas_fee = datas.get("gasFee")
+                has_reading = (
+                    (lst and isinstance(lst, list) and isinstance(lst[0], dict) and lst[0].get("currReading") is not None)
+                    or (isinstance(gas_fee, dict) and gas_fee.get("currReading") is not None)
+                )
+                if not has_reading:
+                    _LOGGER.warning("API 返回数据无有效读数（readingRptList 和 gasFee 均无 currReading），保留上次读数")
+                    raise UpdateFailed("API 数据不完整：无有效读数")
 
         has_datas = isinstance(result, dict) and "datas" in result
         has_curr = False
