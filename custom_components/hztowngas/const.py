@@ -17,7 +17,7 @@ DEFAULT_TOKEN_REFRESH_INTERVAL = 1800  # seconds — token refresh every 30 min 
 DEFAULT_HOST = "weixin.towngasvcc.com"
 DEFAULT_CLIENT_ID = "pe92a8wechatYH0105"
 
-***REMOVED***
+DEFAULT_APPID = "wxc4be7dee36d3b4a2"
 SIGN_SALT = "hbasesoft.com-prod"
 OAUTH_PATH = "/vcc-oauth"
 API_PATH = "/nv1/vcc-cbs"
