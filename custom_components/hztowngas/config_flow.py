@@ -7,7 +7,6 @@ from io import BytesIO
 import logging
 from typing import Any
 
-import aiohttp
 import qrcode
 import voluptuous as vol
 

@@ -20,7 +20,7 @@ from homeassistant.helpers.update_coordinator import (
 )
 from homeassistant.util import dt as dt_util
 
-from .const import CONF_SUBS_CODE, CONF_SUBS_ID, CONF_SCAN_INTERVAL, DEFAULT_SCAN_INTERVAL, DOMAIN
+from .const import CONF_SUBS_CODE, CONF_SUBS_ID, DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
