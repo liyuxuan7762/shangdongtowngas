@@ -74,6 +74,10 @@ class TownGasConfigFlow(ConfigFlow, domain=DOMAIN):
             _LOGGER.exception("Failed to get OAuth URL")
             return self.async_abort(reason="oauth_url_failed")
 
+        if not self._oauth_url:
+            _LOGGER.error("get_oauth_url returned empty string — check DEFAULT_CLIENT_ID and OAuth endpoint")
+            return self.async_abort(reason="oauth_url_failed")
+
         return self.async_show_form(
             step_id="user",
             description_placeholders={
@@ -183,6 +187,10 @@ class TownGasConfigFlow(ConfigFlow, domain=DOMAIN):
             self._oauth_url = await api.get_oauth_url()
         except Exception:
             _LOGGER.exception("Reauth: failed to get OAuth URL")
+            return self.async_abort(reason="oauth_url_failed")
+
+        if not self._oauth_url:
+            _LOGGER.error("Reauth: get_oauth_url returned empty string")
             return self.async_abort(reason="oauth_url_failed")
 
         return self.async_show_form(

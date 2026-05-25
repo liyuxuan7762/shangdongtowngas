@@ -83,13 +83,23 @@ class TownGasApi:
             f"?clientid={DEFAULT_CLIENT_ID}"
             f"&redirectUri={aiohttp.helpers.quote('https://' + DEFAULT_HOST + '/h5-gas/', safe='')}"
         )
+        _LOGGER.debug("Requesting OAuth URL: %s", url)
         async with self._session.get(
             url,
             headers={"User-Agent": USER_AGENT},
             allow_redirects=False,
             ssl=_SSL_CTX,
         ) as resp:
-            return resp.headers.get("Location", "")
+            location = resp.headers.get("Location", "")
+            if not location:
+                body = await resp.text()
+                _LOGGER.warning(
+                    "OAuth union endpoint returned status=%s (expected 302 redirect), body=%s",
+                    resp.status, (body or "")[:500],
+                )
+            else:
+                _LOGGER.debug("Got OAuth redirect: %s", location[:100])
+            return location
 
     async def exchange_token(self, auth_code: str) -> dict[str, Any]:
         """Exchange authCode for access_token + refresh_token."""
