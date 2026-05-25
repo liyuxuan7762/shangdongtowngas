@@ -1,6 +1,6 @@
 """Constants for the TownGas Meter integration."""
 
-DOMAIN = "hztowngas"
+DOMAIN = "shandongtowngas"
 
 CONF_AUTH_CODE = "auth_code"
 CONF_ACCESS_TOKEN = "access_token"
@@ -14,7 +14,7 @@ CONF_TOKEN_CREATE_TIME = "token_create_time"
 
 DEFAULT_SCAN_INTERVAL = 21600          # seconds — data fetch every 6 hours
 DEFAULT_TOKEN_REFRESH_INTERVAL = 1800  # seconds — token refresh every 30 min (keepalive)
-DEFAULT_HOST = "weixin.towngasvcc.com"
+DEFAULT_HOST = "weixin.shandongtowngas.com.cn"
 DEFAULT_CLIENT_ID = "pe92a8wechatYH0105"
 
 DEFAULT_APPID = "wxc4be7dee36d3b4a2"

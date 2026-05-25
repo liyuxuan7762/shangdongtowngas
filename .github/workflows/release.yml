@@ -24,29 +24,29 @@ jobs:
       - name: Update manifest version
         run: |
           sed -i 's/"version": ".*"/"version": "${{ steps.version.outputs.version }}"/' \
-            custom_components/hztowngas/manifest.json
+            custom_components/shandongtowngas/manifest.json
 
       - name: Package integration
         run: |
           cd custom_components
-          zip -r ../hztowngas.zip hztowngas/
+          zip -r ../shandongtowngas.zip shandongtowngas/
           cd ..
-          echo "SHA256: $(sha256sum hztowngas.zip)"
+          echo "SHA256: $(sha256sum shandongtowngas.zip)"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: "HZTownGas ${{ github.ref_name }}"
+          name: "ShanDongTownGas ${{ github.ref_name }}"
           body: |
-            ## HZTownGas ${{ github.ref_name }}
+            ## ShanDongTownGas ${{ github.ref_name }}
 
-            港华燃气 Home Assistant 集成
+            山东港华燃气 Home Assistant 集成
 
             ### 安装方式
 
-            **HACS（推荐）**：在 HACS 中添加本仓库为自定义集成，搜索 HZTownGas 安装。
+            **HACS（推荐）**：在 HACS 中添加本仓库为自定义集成，搜索 ShanDongTownGas 安装。
 
-            **手动安装**：下载 `hztowngas.zip`，解压后将 `hztowngas/` 目录放入 HA 的 `config/custom_components/`，重启 HA 即可。
-          files: hztowngas.zip
+            **手动安装**：下载 `shandongtowngas.zip`，解压后将 `shandongtowngas/` 目录放入 HA 的 `config/custom_components/`，重启 HA 即可。
+          files: shandongtowngas.zip
           draft: false
           prerelease: ${{ contains(github.ref_name, 'beta') || contains(github.ref_name, 'rc') }}

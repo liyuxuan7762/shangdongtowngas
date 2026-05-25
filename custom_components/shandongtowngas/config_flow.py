@@ -116,7 +116,7 @@ class TownGasConfigFlow(ConfigFlow, domain=DOMAIN):
                     scan_interval = int(
                         user_input.get(CONF_SCAN_INTERVAL, DEFAULT_SCAN_INTERVAL)
                     )
-                    title = f"港华燃气 {subs_code}"
+                    title = f"山东港华燃气 {subs_code}"
                     token_refresh_interval = int(
                         user_input.get(CONF_TOKEN_REFRESH_INTERVAL, DEFAULT_TOKEN_REFRESH_INTERVAL)
                     )

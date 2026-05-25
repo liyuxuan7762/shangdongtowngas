@@ -1,0 +1,12 @@
+{
+  "domain": "shandongtowngas",
+  "name": "山东港华燃气 (ShanDongTownGas)",
+  "codeowners": ["@liyuxuan7762"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/liyuxuan7762/shangdongtowngas",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/liyuxuan7762/shangdongtowngas/issues",
+  "requirements": ["qrcode[pil]>=7.4.2"],
+  "version": "1.0.0"
+}

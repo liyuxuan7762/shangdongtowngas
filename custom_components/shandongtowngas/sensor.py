@@ -72,8 +72,8 @@ class TownGasMeterSensor(CoordinatorEntity, SensorEntity):
     def device_info(self) -> dict[str, Any]:
         return {
             "identifiers": {(DOMAIN, self._subs_id)},
-            "name": f"港华燃气表 {self._subs_code}",
-            "manufacturer": "港华燃气",
+            "name": f"山东港华燃气表 {self._subs_code}",
+            "manufacturer": "山东港华燃气",
             "model": "NB-IoT 燃气表",
         }
 

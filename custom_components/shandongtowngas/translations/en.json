@@ -2,12 +2,12 @@
   "config": {
     "step": {
       "user": {
-        "title": "TownGas Meter — Get Auth Link",
+        "title": "ShanDong TownGas Meter — Get Auth Link",
         "description": "Scan with WeChat to authorize:\n\n{oauth_qr_markdown}\n\nOAuth URL: {oauth_url}",
         "data": {}
       },
       "auth": {
-        "title": "TownGas Meter — Enter Auth Code",
+        "title": "ShanDong TownGas Meter — Enter Auth Code",
         "description": "After scanning, paste the authCode from the redirect URL below.\n\n{oauth_qr_markdown}\n\nOAuth URL: {oauth_url}",
         "data": {
           "auth_code": "authCode (or full redirect URL)",
@@ -18,12 +18,12 @@
         }
       },
       "reauth_confirm": {
-        "title": "TownGas Meter — Re-authenticate",
+        "title": "ShanDong TownGas Meter — Re-authenticate",
         "description": "Token has expired. Please scan with WeChat to re-authorize:\n\n{oauth_qr_markdown}\n\nOAuth URL: {oauth_url}",
         "data": {}
       },
       "reauth_token": {
-        "title": "TownGas Meter — Enter New Auth Code",
+        "title": "ShanDong TownGas Meter — Enter New Auth Code",
         "description": "After scanning, paste the new authCode below.\n\n{oauth_qr_markdown}\n\nOAuth URL: {oauth_url}",
         "data": {
           "auth_code": "authCode (or full redirect URL)"
@@ -43,7 +43,7 @@
   "options": {
     "step": {
       "init": {
-        "title": "TownGas Meter — Settings",
+        "title": "ShanDong TownGas Meter — Settings",
         "data": {
           "scan_interval": "Data refresh interval (seconds, 60-86400, default 21600)",
           "token_refresh_interval": "Token refresh interval (seconds, 300-7140, default 1800)"

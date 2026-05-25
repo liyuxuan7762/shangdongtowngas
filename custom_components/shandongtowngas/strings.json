@@ -2,12 +2,12 @@
   "config": {
     "step": {
       "user": {
-        "title": "港华燃气 — 获取授权链接",
+        "title": "山东港华燃气 — 获取授权链接",
         "description": "请用手机微信扫码授权：\n\n{oauth_qr_markdown}\n\n授权链接：{oauth_url}",
         "data": {}
       },
       "auth": {
-        "title": "港华燃气 — 输入授权信息",
+        "title": "山东港华燃气 — 输入授权信息",
         "description": "扫码授权后，请将跳转地址中的 authCode 粘贴到下方。\n\n{oauth_qr_markdown}\n\n授权链接：{oauth_url}",
         "data": {
           "auth_code": "authCode（或完整跳转 URL）",
@@ -18,12 +18,12 @@
         }
       },
       "reauth_confirm": {
-        "title": "港华燃气 — 重新授权",
+        "title": "山东港华燃气 — 重新授权",
         "description": "令牌已失效，请重新用微信扫码授权：\n\n{oauth_qr_markdown}\n\n授权链接：{oauth_url}",
         "data": {}
       },
       "reauth_token": {
-        "title": "港华燃气 — 输入新的 authCode",
+        "title": "山东港华燃气 — 输入新的 authCode",
         "description": "扫码后请粘贴新的 authCode。\n\n{oauth_qr_markdown}\n\n授权链接：{oauth_url}",
         "data": {
           "auth_code": "authCode（或完整跳转 URL）"
@@ -43,7 +43,7 @@
   "options": {
     "step": {
       "init": {
-        "title": "港华燃气 — 设置",
+        "title": "山东港华燃气 — 设置",
         "data": {
           "scan_interval": "数据刷新间隔（秒，60-86400，默认 21600）",
           "token_refresh_interval": "Token 刷新间隔（秒，300-7140，默认 1800）"
